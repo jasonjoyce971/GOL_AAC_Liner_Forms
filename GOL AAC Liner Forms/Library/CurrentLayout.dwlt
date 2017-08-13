@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 521}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -38,7 +38,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 737
-    width: 1175
+    width: 1174
     height: 210
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
@@ -65,10 +65,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1175
+    width: 1174
     height: 947
-  m_MinSize: {x: 202, y: 342}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 202, y: 321}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
   controlID: 11
 --- !u!114 &4
@@ -112,7 +112,7 @@ MonoBehaviour:
   - {fileID: 4}
   m_Position:
     serializedVersion: 2
-    x: 1175
+    x: 1174
     y: 0
     width: 434
     height: 947
@@ -248,9 +248,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1609
+    x: 1608
     y: 0
-    width: 311
+    width: 312
     height: 947
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -277,10 +277,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1175
+    width: 1174
     height: 737
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 26}
   m_Panes:
   - {fileID: 26}
@@ -395,7 +395,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 829
-    width: 1173
+    width: 1172
     height: 189
 --- !u!114 &17
 MonoBehaviour:
@@ -636,11 +636,11 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1611
-    y: 92
-    width: 309
-    height: 926
-  m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/collab
+    x: 1605
+    y: 100
+    width: 307
+    height: 910
+  m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_GlobalObjectTypeName: 
   m_RegisteredViewURLs:
   - https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
@@ -672,15 +672,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1177
+    x: 1176
     y: 92
     width: 430
     height: 463
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d2370000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 5abdfaff96bdfaff98d7faffaa18fbffaecefbffb8cefbffc6cefbff9618fdffb018fdffb254fdffbc54fdffca54fdff6813feff521cfeffc832feff8ca3fefff8b6feff5ceafeffdef4feff12f8feffcc67ffff3aa6ffff14aeffffdcfbffff0000000080260000b8260000d0260000
+    m_ExpandedIDs: 90f3faffa8f3faffb2f3faff7ef6faff86f6faff90f6faff94dcfbff1025fcff0626fcff1027fcffd637fcff6e83fcff2a85fcffb09cfcffac0bfdffa00cfdffd40dfdff6c96fdffbc97fdfffc98fdff989afdffbab6fdff54cffdfff41bfeff182dfeff682dfeff6a2dfeff5a31feffa2bdfeff8261ffffa861ffffbc61ffffc061ffffd261fffff461ffff0c62ffff6262ffff8a62ffffe862ffff3863ffffd4f6ffff12f7ffff24f7ffff5ef7ffffb4f7ffff3af8ffff8af8ffff8cf8ffffdcfbffff000000009c260000e6260000fe260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -725,9 +725,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1611
+    x: 1610
     y: 92
-    width: 309
+    width: 310
     height: 926
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1177
+    x: 1176
     y: 576
     width: 430
     height: 442
@@ -773,19 +773,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Custom Assets/Scripts
+    - Assets/Custom Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Custom Assets/Scripts
+  - Assets/Custom Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\GITHUB\GOL_AAC_Liner_Forms\GOL AAC Liner Forms
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00260000
-    m_LastClickedID: 9728
-    m_ExpandedIDs: 0000000000250000ba250000dc2500003226000000ca9a3bffffff7f
+    m_SelectedIDs: 88250000
+    m_LastClickedID: 9608
+    m_ExpandedIDs: 0000000008250000ca250000ec2500004626000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -813,7 +813,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000250000ba250000dc25000032260000
+    m_ExpandedIDs: 0000000008250000ca250000ec25000046260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -841,18 +841,18 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 3c300000b6290000602d0000d62d00005a2d0000de2600007c3200006c2d0000a62f00001a2f000072b2fdff923200005a340000aa340000f42600004a280000a62800002e26000096290000822900003e290000b8290000
+    m_ExpandedInstanceIDs: 3c300000b6290000602d0000d62d00005a2d0000de2600007c3200006c2d0000a62f00001a2f000072b2fdff923200005a340000aa340000f42600004a280000a62800002e26000096290000822900003e290000b829000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Liner3InputUIFunctions
-      m_OriginalName: Liner3InputUIFunctions
+      m_Name: Liner6InputUIFunctions
+      m_OriginalName: Liner6InputUIFunctions
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 14290
+      m_UserData: 16648
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -892,7 +892,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 1173
+    width: 1172
     height: 716
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -902,8 +902,8 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -586.5
-    m_HBaseRangeMax: 586.5
+    m_HBaseRangeMin: -586
+    m_HBaseRangeMax: 586
     m_VBaseRangeMin: -349.5
     m_VBaseRangeMax: 349.5
     m_HAllowExceedBaseRangeMin: 1
@@ -922,25 +922,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1173
+      width: 1172
       height: 699
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 586.5, y: 349.5}
+    m_Translation: {x: 586, y: 349.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -586.5
+      x: -586
       y: -349.5
-      width: 1173
+      width: 1172
       height: 699
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1173, y: 716}
+  m_LastWindowPixelSize: {x: 1172, y: 716}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -968,17 +968,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 1173
+    width: 1172
     height: 716
   m_SceneLighting: 1
-  lastFramingTime: 10321.148988095143
+  lastFramingTime: 7078.182656075452
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 586.5, y: 349.5, z: 0}
+    m_Target: {x: 586, y: 349.75, z: 0}
     speed: 2
-    m_Value: {x: 586.5, y: 349.5, z: 0}
+    m_Value: {x: 586, y: 349.75, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -1005,9 +1005,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 648.6035
+    m_Target: 649.6328
     speed: 2
-    m_Value: 648.6035
+    m_Value: 649.6328
   m_Ortho:
     m_Target: 1
     speed: 2
