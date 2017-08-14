@@ -22,9 +22,11 @@ public class ExitMenuUIFunctions : MonoBehaviour
     {
         // Exit application with Editor pseudo quit code
 #if UNITY_EDITOR
+        PlayerPrefs.DeleteAll();
         EditorApplication.isPlaying = false;
         Debug.Log("Exit Panel: Exit Application");
 #else
+        PlayerPrefs.DeleteAll();
         Application.Quit();
         Debug.Log("Exit Panel: Exit Application");
 #endif
