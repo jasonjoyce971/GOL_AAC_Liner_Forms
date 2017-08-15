@@ -252,8 +252,8 @@ MonoBehaviour:
     y: 0
     width: 312
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -678,9 +678,9 @@ MonoBehaviour:
     height: 463
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0e270000
-    m_LastClickedID: 9998
-    m_ExpandedIDs: 52adfeff5eadfeff7cadfeffb6adfeffecadfeffeeadfeff0067ffff0a67ffff1267ffff2467ffff5267ffff5867ffff8a67ffff8c67ffffca85ffffea85ffff0486ffff3486ffff1c87ffff9887ffff0c88ffff0e88ffff30f2ffff3ef2ffff58f2ffff78f2ffff8af2ffffa2f2ffffb4f2ffffccf2ffffeef2ffff72f3ffffd4f3ffffe4f3ffff5af4ffffdcfbffff00000000e2260000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 5a13fbffa854fdff0ea5fdff18a5fdff58d1fdff72d1fdff82d1fdff8ed1fdff0aeffdff14effdfff8ebffffdcfbffff00000000bc260000062700001e270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -783,9 +783,9 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 18260000
-    m_LastClickedID: 9752
-    m_ExpandedIDs: 000000000c250000ce250000f02500005226000000ca9a3bffffff7f
+    m_SelectedIDs: 24260000
+    m_LastClickedID: 9764
+    m_ExpandedIDs: 0000000010250000d6250000fc2500005e26000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -813,7 +813,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000c250000ce250000f025000052260000
+    m_ExpandedIDs: 0000000010250000d6250000fc2500005e260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -844,18 +844,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 3c300000b6290000602d0000d62d00005a2d0000de2600007c3200006c2d0000a62f00001a2f000072b2fdff923200005a340000aa340000f42600004a280000a62800002e26000096290000822900003e290000b829000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CASAssistUIFunctions
+      m_OriginalName: CASAssistUIFunctions
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 13656
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 4}
     m_CreateAssetUtility:
