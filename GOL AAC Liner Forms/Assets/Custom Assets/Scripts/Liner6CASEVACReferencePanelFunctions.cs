@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Liner6ReferencePanelFunctions : MonoBehaviour {
+public class Liner6CASEVACReferencePanelFunctions : MonoBehaviour {
 
     // Panels
     public GameObject Panel;
@@ -39,14 +39,14 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
         // Detect the Main UI Panel for later
         ParentPanel = GameObject.Find("UI");
         // Import PlayerPrefs to populate vars
-        GridInput = PlayerPrefs.GetString("Liner6Grid");
-        CTabInput = PlayerPrefs.GetString("Liner6cTab");
-        TypeDropdown = PlayerPrefs.GetInt("Liner6Type");
-        OrdDropdown = PlayerPrefs.GetInt("Liner6Ord");
-        IngressDropdown = PlayerPrefs.GetInt("Liner6Ingress");
-        MarkingDropdown = PlayerPrefs.GetInt("Liner6Marking");
-        EgressDropdown = PlayerPrefs.GetInt("Liner6Egress");
-        NotesCounter = PlayerPrefs.GetInt("Liner6NotesCount");
+        GridInput = PlayerPrefs.GetString("Liner6CASEVACGrid");
+        CTabInput = PlayerPrefs.GetString("Liner6CASEVACcTab");
+        TypeDropdown = PlayerPrefs.GetInt("Liner6CASEVACType");
+        OrdDropdown = PlayerPrefs.GetInt("Liner6CASEVACOrd");
+        IngressDropdown = PlayerPrefs.GetInt("Liner6CASEVACIngress");
+        MarkingDropdown = PlayerPrefs.GetInt("Liner6CASEVACMarking");
+        EgressDropdown = PlayerPrefs.GetInt("Liner6CASEVACEgress");
+        NotesCounter = PlayerPrefs.GetInt("Liner6CASEVACNotesCount");
 
         // Call population function to fill out reference data based on vars
         DataPopulate();
@@ -59,22 +59,22 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
         {
             case 1:
                 {
-                    Type.text = "Infantry";
+                    Type.text = "T1";
                     break;
                 }
             case 2:
                 {
-                    Type.text = "Light";
+                    Type.text = "T2";
                     break;
                 }
             case 3:
                 {
-                    Type.text = "Heavy";
+                    Type.text = "T3";
                     break;
                 }
             case 4:
                 {
-                    Type.text = "Static";
+                    Type.text = "T4";
                     break;
                 }
         }
@@ -82,22 +82,22 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
         {
             case 1:
                 {
-                    Ord.text = "Guns";
+                    Ord.text = "Safe";
                     break;
                 }
             case 2:
                 {
-                    Ord.text = "Rockets";
+                    Ord.text = "Sporadic";
                     break;
                 }
             case 3:
                 {
-                    Ord.text = "Missiles";
+                    Ord.text = "Hot";
                     break;
                 }
             case 4:
                 {
-                    Ord.text = "Bombs";
+                    Ord.text = "Unknown";
                     break;
                 }
         }
@@ -148,12 +148,12 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
         {
             case 1:
                 {
-                    Marking.text = "Smoke/Beacon";
+                    Marking.text = "Smoke";
                     break;
                 }
             case 2:
                 {
-                    Marking.text = "Laser";
+                    Marking.text = "Talk Down";
                     break;
                 }
             case 3:
@@ -163,7 +163,7 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
                 }
             case 4:
                 {
-                    Marking.text = "IR Pointer";
+                    Marking.text = "IR Beacon";
                     break;
                 }
         }
@@ -213,15 +213,15 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
 
         int counter = 0;
         string s;
-        for(int i = 0; i <= NotesCounter; i++)
+        for (int i = 0; i <= NotesCounter; i++)
         {
-            s = PlayerPrefs.GetString("Liner6Notes " + counter);
+            s = PlayerPrefs.GetString("Liner6CASEVACNotes " + counter);
             s = s + "\n";
             Notes.text = Notes.text + s;
             counter++;
         };
-          
-        Debug.Log("Liner6 Reference Panel loading complete");
+
+        Debug.Log("Liner6CASEVAC Reference Panel loading complete");
     }
 
     // Button Functions
@@ -232,18 +232,18 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
         ParentPanelRef.SetActive(true);
         Destroy(Panel);
         PlayerPrefs.DeleteAll();
-        Debug.Log("Liner6 Reference Panel: Destory Liner6 Reference Panel");
+        Debug.Log("Liner6CASEVAC Reference Panel: Destory Liner6CASEVAC Reference Panel");
     }
 
     public void QuitButtonClicked()
     {
         // Load Quit Panel
         Instantiate(QuitPanel);
-        Debug.Log("Liner6 Reference Panel: Load Quit Panel");
+        Debug.Log("Liner6CASEVAC Reference Panel: Load Quit Panel");
     }
 
     public void CasAssistantClicked()
     {
-        Debug.Log("Liner6 Reference Panel: Load CAS Assistant");
+        Debug.Log("Liner6CASEVAC Reference Panel: Load CAS Assistant");
     }
 }

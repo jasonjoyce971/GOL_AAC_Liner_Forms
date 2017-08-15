@@ -1286,7 +1286,8 @@ MonoBehaviour:
     type: 2}
   Liner6Panel: {fileID: 1978555029493076, guid: c32313ed679827c48afa3389fa38f62f,
     type: 2}
-  Liner6CASEVACPanel: {fileID: 0}
+  Liner6CASEVACPanel: {fileID: 1908505867270652, guid: cff8d98ab369db148bbcc1c119acd345,
+    type: 2}
   CASAssistPanel: {fileID: 0}
   ExitPanel: {fileID: 1522950354267946, guid: 89a277f207336e845a33f27d59ba456d, type: 2}
 --- !u!1 &1319719696

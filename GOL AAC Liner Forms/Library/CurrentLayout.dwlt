@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 737
     width: 1174
     height: 210
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -116,8 +116,8 @@ MonoBehaviour:
     y: 0
     width: 434
     height: 947
-  m_MinSize: {x: 234, y: 471}
-  m_MaxSize: {x: 10004, y: 14021}
+  m_MinSize: {x: 234, y: 492}
+  m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
   controlID: 78
 --- !u!114 &6
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 713, y: 471}
-  m_MaxSize: {x: 18008, y: 14021}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 10
 --- !u!114 &9
@@ -227,8 +227,8 @@ MonoBehaviour:
     y: 0
     width: 434
     height: 484
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -678,9 +678,9 @@ MonoBehaviour:
     height: 463
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c260000
-    m_LastClickedID: 9884
-    m_ExpandedIDs: 965df6ff9e5df6ffa45ef6ffb45ef6fff2a2f6fffaa2f6ff82a3f6ff9ea3f6ff00a4f6ff02a4f6ff10a4f6ffcac1f6ffd2c1f6ffd8c2f6ffe8c2f6ff38fbf6ff4afbf6ff58fbf6ffcafbf6ff8cfcf6fff6fcf6ff6afdf6ff6cfdf6ffacb5f7ffbcb5f7ff0835f8ff2664f8ff34d2f8fff8e0f8ff6e23f9ff0e88f9ff3888f9ffc8ccfaff7cdafaff48e4faff06f6faff2228fbff864efbff844cfcff8e4cfcff9c4cfcff9e4cfcff02dffcfffadffcffe4e0fcffca0cfdffee25fdff6e53fdff7653fdffa86efdff0297fdff3cf1ffff64f1ffffcaf1ffffdaf1ffffeaf1fffff2f1fffff6f1fffffcf1ffff0ef2ffff1cf2ffff20f2ffff2af2ffff62f2ffff7ef2ffff8ef2ffff24f3ffff32f3ffff50f3ffffd6f3ffffe8f3fffff0f3fffffcf3ffff2ef4ffffdcfbffff00000000a4260000da260000ee2600000627000048270000
+    m_SelectedIDs: 0e270000
+    m_LastClickedID: 9998
+    m_ExpandedIDs: 52adfeff5eadfeff7cadfeffb6adfeffecadfeffeeadfeff0067ffff0a67ffff1267ffff2467ffff5267ffff5867ffff8a67ffff8c67ffffca85ffffea85ffff0486ffff3486ffff1c87ffff9887ffff0c88ffff0e88ffff30f2ffff3ef2ffff58f2ffff78f2ffff8af2ffffa2f2ffffb4f2ffffccf2ffffeef2ffff72f3ffffd4f3ffffe4f3ffff5af4ffffdcfbffff00000000e2260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,7 +729,7 @@ MonoBehaviour:
     y: 92
     width: 310
     height: 926
-  m_ScrollPosition: {x: 0, y: 8.955078}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 233
@@ -773,19 +773,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Custom Assets/Prefabs
+    - Assets/Custom Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Custom Assets/Prefabs
+  - Assets/Custom Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\GITHUB\GOL_AAC_Liner_Forms\GOL AAC Liner Forms
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8a250000
-    m_LastClickedID: 9610
-    m_ExpandedIDs: 000000000a250000cc250000ee2500004c26000000ca9a3bffffff7f
+    m_SelectedIDs: 18260000
+    m_LastClickedID: 9752
+    m_ExpandedIDs: 000000000c250000ce250000f02500005226000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -813,7 +813,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a250000cc250000ee2500004c260000
+    m_ExpandedIDs: 000000000c250000ce250000f025000052260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
