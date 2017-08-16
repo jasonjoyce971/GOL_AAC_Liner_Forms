@@ -231,7 +231,20 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
         ParentPanelRef = ParentPanel.transform.Find("Main Canvas").gameObject;
         ParentPanelRef.SetActive(true);
         Destroy(Panel);
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("Liner6Grid");
+        PlayerPrefs.DeleteKey("Liner6cTab");
+        PlayerPrefs.DeleteKey("Liner6Type");
+        PlayerPrefs.DeleteKey("Liner6Ord");
+        PlayerPrefs.DeleteKey("Liner6Ingress");
+        PlayerPrefs.DeleteKey("Liner6Marking");
+        PlayerPrefs.DeleteKey("Liner6Egress");
+        int counter = 0;
+        for (int i = 0; i <= NotesCounter; i++)
+        {
+            PlayerPrefs.DeleteKey("Liner6Notes " + counter);
+            counter++;
+        };
+        PlayerPrefs.DeleteKey("Liner6NotesCount");
         Debug.Log("Liner6 Reference Panel: Destory Liner6 Reference Panel");
     }
 

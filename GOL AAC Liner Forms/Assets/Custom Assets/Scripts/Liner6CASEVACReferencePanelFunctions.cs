@@ -231,7 +231,23 @@ public class Liner6CASEVACReferencePanelFunctions : MonoBehaviour {
         ParentPanelRef = ParentPanel.transform.Find("Main Canvas").gameObject;
         ParentPanelRef.SetActive(true);
         Destroy(Panel);
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("Liner6CASEVACGrid");
+        PlayerPrefs.DeleteKey("Liner6CASEVACcTab");
+        PlayerPrefs.DeleteKey("Liner6CASEVACType");
+        PlayerPrefs.DeleteKey("Liner6CASEVACOrd");
+        PlayerPrefs.DeleteKey("Liner6CASEVACIngress");
+        PlayerPrefs.DeleteKey("Liner6CASEVACMarking");
+        PlayerPrefs.DeleteKey("Liner6CASEVACEgress");
+
+        int counter = 0;
+        for (int i = 0; i <= NotesCounter; i++)
+        {
+            PlayerPrefs.DeleteKey("Liner6CASEVACNotes " + counter);
+            counter++;
+        };
+
+        PlayerPrefs.DeleteKey("Liner6CASEVACNotesCount");
+
         Debug.Log("Liner6CASEVAC Reference Panel: Destory Liner6CASEVAC Reference Panel");
     }
 

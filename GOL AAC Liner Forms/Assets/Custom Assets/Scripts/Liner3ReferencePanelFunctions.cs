@@ -145,6 +145,11 @@ public class Liner3ReferencePanelFunctions : MonoBehaviour
         ParentPanelRef = ParentPanel.transform.Find("Main Canvas").gameObject;
         ParentPanelRef.SetActive(true);
         Destroy(Panel);
+        PlayerPrefs.DeleteKey("Liner3Grid");
+        PlayerPrefs.DeleteKey("Liner3cTab");
+        PlayerPrefs.DeleteKey("Liner3Type");
+        PlayerPrefs.DeleteKey("Liner3Ord");
+        PlayerPrefs.DeleteKey("Liner3Ingress");
         Debug.Log("Liner3 Reference Panel: Destory Liner3 Reference Panel");
     }
 
