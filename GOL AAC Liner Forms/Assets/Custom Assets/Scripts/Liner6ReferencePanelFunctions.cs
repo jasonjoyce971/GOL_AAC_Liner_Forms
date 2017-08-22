@@ -9,6 +9,7 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
     // Panels
     public GameObject Panel;
     public GameObject QuitPanel;
+    public GameObject CASAssist;
 
     private GameObject ParentPanel;
     private GameObject ParentPanelRef;
@@ -257,6 +258,10 @@ public class Liner6ReferencePanelFunctions : MonoBehaviour {
 
     public void CasAssistantClicked()
     {
+        ParentPanelRef = ParentPanel.transform.Find("Main Canvas").gameObject;
+        ParentPanelRef.SetActive(true);
+        Destroy(Panel);
+        Instantiate(CASAssist);
         Debug.Log("Liner6 Reference Panel: Load CAS Assistant");
     }
 }
