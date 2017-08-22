@@ -121,7 +121,7 @@ public class CASAssistUIFunctions : MonoBehaviour {
                     Pylon8Text.text = "Right Belly Outer";
                     Pylon7.ClearOptions();
                     Pylon8.ClearOptions();
-                    string Pylon7Input = "Empty\nMk82 Snakeye\nMk82 Snakeye x3\nMk82 GPB\nMk82 GPB x3\nMk84 GPB\nCBU-87 CEM\nCBU-89 GATOR\nCBU - 97 SFW\nCBU - 103 CEM WCMD\nCBU - 105 SFW WCMD\nGBU - 10\nGBU - 12\nGBU - 12 x3\nEGBU - 12 II\nEGBU - 12 II x3\nGBU - 31\nGBU - 38\nGBU - 54\nHYDRA x7\nHYDRA x21\nAPKWS HYDRA x7\nAPKWS HYDRA x21\nZUNI x4\nCRV7 FAT x19\nCRV7 HE x19\nCRV7 KEP x19";
+                    string Pylon7Input = "Empty\nMk82 Snakeye\nMk82 Snakeye x3\nMk82 GPB\nMk82 GPB x3\nMk84 GPB\nCBU-87 CEM\nCBU-89 GATOR\nCBU-97 SFW\nCBU-103 CEM WCMD\nCBU-105 SFW WCMD\nGBU-10\nGBU-12\nGBU-12 x3\nEGBU-12 II\nEGBU-12 II x3\nGBU-31\nGBU-38\nGBU-54\nHYDRA x7\nHYDRA x21\nAPKWS HYDRA x7\nAPKWS HYDRA x21\nZUNI x4\nCRV7 FAT x19\nCRV7 HE x19\nCRV7 KEP x19";
                     string[] Pylon7splitString = Pylon7Input.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
                     foreach (string s in Pylon7splitString)
                     {
@@ -894,6 +894,7 @@ public class CASAssistUIFunctions : MonoBehaviour {
     // Confirm Button Passes data to PlayerPrefs ready for further use
     public void ConfirmButtonClicked()
     {
+        PlayerPrefs.SetInt("CASAssistAirframeToken", AircraftSelectionValue);
         PlayerPrefs.SetInt("CASAssistPylon1", Pylon1.value);
         PlayerPrefs.SetInt("CASAssistPylon2", Pylon2.value);
         PlayerPrefs.SetInt("CASAssistPylon3", Pylon3.value);
