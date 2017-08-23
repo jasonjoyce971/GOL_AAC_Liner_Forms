@@ -102,6 +102,10 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
 
     private void GeneratePayloadData()
     {
+        /////////////////////
+        // Main Payload Logic
+        /////////////////////
+
         // Ascertain ord type to discover if aircraft is capable
         switch (OrdDropdown)
         {
@@ -184,7 +188,7 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                         {
                                                             //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
                                                             SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedAttack.text = "Self Des Laser";
                                                         }
                                                         else if(pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
                                                         {
@@ -196,7 +200,7 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                         {
                                                             //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
                                                             SuggestedWeapon.text = "APKWS HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedAttack.text = "Self Des Laser";
                                                         }
                                                         else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
                                                         {
@@ -243,13 +247,13 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                         {
                                                             //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
                                                             SuggestedWeapon.text = "CRV-7 FAT";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedAttack.text = "Self Des Laser";
                                                         }
                                                         else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
                                                         {
                                                             //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
                                                             SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedAttack.text = "Self Des Laser";
                                                         }
                                                         else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
                                                         {
@@ -261,7 +265,116 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                         {
                                                             //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
                                                             SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
                                                             SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
                                                         }
                                                         else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
                                                         {
@@ -284,23 +397,2356 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                         }
                                     case 2: // laser
                                         {
-                                            AvailableWeapons.text = "GAU-8 30mm Cannon";
-                                            SuggestedWeapon.text = "GAU-8 30mm Cannon";
-                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
                                             break;
                                         }
                                     case 3: // no mark
                                         {
-                                            AvailableWeapons.text = "GAU-8 30mm Cannon";
-                                            SuggestedWeapon.text = "GAU-8 30mm Cannon";
-                                            SuggestedAttack.text = "Visual CCIP";
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
                                             break;
                                         }
                                     case 4: // ir pointer
                                         {
-                                            AvailableWeapons.text = "GAU-8 30mm Cannon";
-                                            SuggestedWeapon.text = "GAU-8 30mm Cannon";
-                                            SuggestedAttack.text = "CCIP On IR Point";
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                }
+                                break;
+                            }
+                    }
+                    break;
+                }
+            case 3: // Missiles
+                {
+                    switch (aircraft)
+                    {
+                        case 0: // A-10
+                            {
+                                switch (MarkingDropdown)
+                                {
+                                    case 1: // smoke
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedAttack.text = "N/A";
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                    case 2: // laser
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedAttack.text = "N/A";
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                    case 3: // no mark
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedAttack.text = "N/A";
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                    case 4: // ir pointer
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                        SuggestedAttack.text = "N/A";
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+                                                        if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65D\n";
+                                                        }
+                                                        if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65H\n";
+                                                        }
+                                                        if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65G\n";
+                                                        }
+                                                        if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65K";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 31 || pylon6 == 31 || pylon5 == 32 || pylon6 == 32) // AGM-65D
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65D";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 33 || pylon6 == 33 || pylon5 == 34 || pylon6 == 34) // AGM-65H
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "AGM-65H";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+                                                        else if (pylon5 == 37 || pylon6 == 37) // AGM-65G
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "AGM-65G";
+                                                            SuggestedAttack.text = "IR Lock";
+                                                        }
+                                                        else if (pylon5 == 38 || pylon6 == 38) // AGM-65K
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "AGM-65K";
+                                                            SuggestedAttack.text = "DTV Lock";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "AGM-65L\n";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 35 || pylon6 == 35 || pylon5 == 36 || pylon6 == 36) // AGM-65L
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "AGM-65L";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                }
+                                break;
+                            }
+                    }
+                    break;
+                }
+            case 4: // Bombs
+                {
+                    switch (aircraft)
+                    {
+                        case 0: // A-10
+                            {
+                                switch (MarkingDropdown)
+                                {
+                                    case 1: // smoke
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
+                                                        }
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-87";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                    case 2: // laser
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                    case 3: // no mark
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
+                                            break;
+                                        }
+                                    case 4: // ir pointer
+                                        {
+                                            switch (TypeDropdown)
+                                            {
+                                                case 1: // Infantry
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 2: // Light
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 3: // Heavy
+                                                    {
+                                                        // List Available Weapons
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                        }
+                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                        }
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                                case 4: // Static
+                                                    {
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                        }
+                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                        }
+                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                        }
+                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                        }
+
+                                                        // Select Suggested Weapon (falls through from most useful to least)
+                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        {
+                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                        }
+
+                                                        // If all fails - we have no available ordnance for the solution
+                                                        else
+                                                        {
+                                                            AvailableWeapons.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedWeapon.text = "NO SUITABLE ORDNANCE";
+                                                            SuggestedAttack.text = "N/A";
+                                                        }
+                                                        break;
+                                                    }
+                                            }
                                             break;
                                         }
                                 }
@@ -310,21 +2756,6 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                     break;
                 }
         }
-        /*aircraft = PlayerPrefs.GetInt("CASAssistAirframeToken");
-        pylon1 = PlayerPrefs.GetInt("CASAssistPylon1");
-        pylon2 = PlayerPrefs.GetInt("CASAssistPylon2");
-        pylon3 = PlayerPrefs.GetInt("CASAssistPylon3");
-        pylon4 = PlayerPrefs.GetInt("CASAssistPylon4");
-        pylon5 = PlayerPrefs.GetInt("CASAssistPylon5");
-        pylon6 = PlayerPrefs.GetInt("CASAssistPylon6");
-        pylon7 = PlayerPrefs.GetInt("CASAssistPylon7");
-        pylon8 = PlayerPrefs.GetInt("CASAssistPylon8");
-        pylon9 = PlayerPrefs.GetInt("CASAssistPylon9");
-        pylon10 = PlayerPrefs.GetInt("CASAssistPylon10");
-        pylon11 = PlayerPrefs.GetInt("CASAssistPylon11");
-        pylon12 = PlayerPrefs.GetInt("CASAssistPylon12");
-        pylon13 = PlayerPrefs.GetInt("CASAssistPylon13");
-        pylon14 = PlayerPrefs.GetInt("CASAssistPylon14");*/
     }
 
     private void DataPopulate()

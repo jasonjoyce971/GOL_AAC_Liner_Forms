@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 737
     width: 1174
     height: 210
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 0
     width: 1174
     height: 947
-  m_MinSize: {x: 202, y: 321}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 342}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
   controlID: 11
 --- !u!114 &4
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 711, y: 492}
-  m_MaxSize: {x: 18006, y: 14042}
+  m_MinSize: {x: 713, y: 492}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 10
 --- !u!114 &9
@@ -678,9 +678,9 @@ MonoBehaviour:
     height: 463
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 98060000
     m_LastClickedID: 0
-    m_ExpandedIDs: e2cdffff66ceffff68ceffff8ae0ffff06e1ffff5ee1ffff7ee1ffffaae1fffface1ffffdefbffff00000000
+    m_ExpandedIDs: dcfbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -773,18 +773,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Custom Assets/Prefabs
+    - Assets/Custom Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Custom Assets/Prefabs
+  - Assets/Custom Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\GITHUB\GOL_AAC_Liner_Forms\GOL AAC Liner Forms
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9a250000
-    m_LastClickedID: 9626
+    m_SelectedIDs: 32260000
+    m_LastClickedID: 9778
     m_ExpandedIDs: 000000001a250000e0250000062600007026000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
