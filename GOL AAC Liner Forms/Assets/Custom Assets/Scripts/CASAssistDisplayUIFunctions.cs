@@ -1813,7 +1813,7 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                             {
                                                 case 1: // Infantry
                                                     {
-                                                        // List Available Weapons
+                                                        // List Available Weapons (runs all from most useful to least)
                                                         if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
                                                             AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
@@ -1822,13 +1822,41 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                         {
                                                             AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 ||  pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3|| pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5  || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
@@ -1842,16 +1870,49 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                             SuggestedWeapon.text = "CBU-87";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
 
@@ -1866,57 +1927,124 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 2: // Light
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
+                                                        }
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        else if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedWeapon.text = "CBU-97";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedWeapon.text = "CBU-87";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
 
@@ -1931,47 +2059,106 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 3: // Heavy
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 KEP";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
-                                                            SuggestedAttack.text = "Self Des Laser";
-                                                        }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
-                                                        {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "CBU-97";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
 
@@ -1986,46 +2173,88 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 4: // Static
                                                     {
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Smoke";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "CCIP On Smoke";
                                                         }
 
@@ -2047,47 +2276,106 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                             {
                                                 case 1: // Infantry
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "Laser Lock";
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
-                                                            SuggestedAttack.text = "Laser Lock";
-                                                        }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
-                                                        {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedWeapon.text = "CBU-87";
                                                             SuggestedAttack.text = "CCIP On Laser Point";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "CCIP On Laser Point";
                                                         }
 
@@ -2102,58 +2390,125 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 2: // Light
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
+                                                        }
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-97";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-87";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "GBU-54";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
                                                         }
 
                                                         // If all fails - we have no available ordnance for the solution
@@ -2167,48 +2522,107 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 3: // Heavy
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-97";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedWeapon.text = "GBU-54";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
                                                         }
 
                                                         // If all fails - we have no available ordnance for the solution
@@ -2222,47 +2636,89 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 4: // Static
                                                     {
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedWeapon.text = "GBU-54";
                                                             SuggestedAttack.text = "Laser Lock";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
-                                                            SuggestedAttack.text = "CCIP On Smoke";
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Laser Lock";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
+                                                            SuggestedAttack.text = "CCIP On Laser Point";
                                                         }
 
                                                         // If all fails - we have no available ordnance for the solution
@@ -2283,47 +2739,106 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                             {
                                                 case 1: // Infantry
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
-                                                        }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
-                                                        {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedWeapon.text = "CBU-87";
                                                             SuggestedAttack.text = "Visual CCIP";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "Visual CCIP";
                                                         }
 
@@ -2338,57 +2853,124 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 2: // Light
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
+                                                        }
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        else if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
-                                                        }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
-                                                        {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedWeapon.text = "CBU-97";
                                                             SuggestedAttack.text = "Visual CCIP";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "CBU-87";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-10";
+                                                            SuggestedAttack.text = "Self Des Laser";
+                                                        }
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "Visual CCIP";
                                                         }
 
@@ -2403,47 +2985,106 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 3: // Heavy
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-97";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedWeapon.text = "GBU-10";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "Visual CCIP";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "Visual CCIP";
                                                         }
 
@@ -2458,46 +3099,88 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 4: // Static
                                                     {
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedWeapon.text = "GBU-10";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
+                                                            SuggestedWeapon.text = "Mk82 GPB";
                                                             SuggestedAttack.text = "Visual CCIP";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "Visual CCIP";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
                                                             SuggestedAttack.text = "Visual CCIP";
                                                         }
 
@@ -2519,48 +3202,107 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                             {
                                                 case 1: // Infantry
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-87";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedWeapon.text = "GBU-10";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
-                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
-                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
 
                                                         // If all fails - we have no available ordnance for the solution
@@ -2574,58 +3316,125 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 2: // Light
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-103\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-87\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
+                                                        }
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 9 || pylon6 == 9 || pylon7 == 9 || pylon8 == 9 || pylon9 == 7 || pylon10 == 7) // CBU-103
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-103";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-97";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
+                                                        }
+                                                        else if (pylon1 == 4 || pylon2 == 4 || pylon3 == 14 || pylon4 == 14 || pylon5 == 6 || pylon6 == 6 || pylon7 == 6 || pylon8 == 6 || pylon9 == 4 || pylon10 == 4 || pylon11 == 4) // CBU-87
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-87";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "GBU-10";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
-                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
-                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                            SuggestedWeapon.text = "Mk84 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
 
                                                         // If all fails - we have no available ordnance for the solution
@@ -2639,48 +3448,107 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 3: // Heavy
                                                     {
-                                                        // List Available Weapons
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 KEP\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-105\n";
                                                         }
-                                                        if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 FAT\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "CBU-97\n";
                                                         }
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
+                                                        }
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
+                                                        }
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 11 || pylon4 == 11 || pylon5 == 30 || pylon6 == 30 || pylon7 == 26 || pylon8 == 26) // CRV-7KEP
+                                                        if (pylon5 == 10 || pylon6 == 10 || pylon7 == 10 || pylon8 == 10 || pylon9 == 8 || pylon10 == 8) // CBU-105
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 KEP";
+                                                            SuggestedWeapon.text = "CBU-105";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 6 || pylon2 == 6 || pylon3 == 16 || pylon4 == 16 || pylon5 == 8 || pylon6 == 8 || pylon7 == 8 || pylon8 == 8 || pylon9 == 6 || pylon10 == 6 || pylon11 == 6) // CBU-97
+                                                        {
+                                                            SuggestedWeapon.text = "CBU-97";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
+                                                        }
+                                                        else if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 9 || pylon4 == 9 || pylon5 == 28 || pylon6 == 28 || pylon7 == 24 || pylon8 == 24) // CRV-7FAT
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 FAT";
+                                                            SuggestedWeapon.text = "GBU-10";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
-                                                            SuggestedAttack.text = "Self Des Laser";
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
-                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
 
                                                         // If all fails - we have no available ordnance for the solution
@@ -2694,47 +3562,89 @@ public class CASAssistDisplayUIFunctions : MonoBehaviour {
                                                     }
                                                 case 4: // Static
                                                     {
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        // List Available Weapons (runs all from most useful to least)
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "EGBU-12\n";
                                                         }
-                                                        if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-54";
                                                         }
-                                                        if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-38";
                                                         }
-                                                        if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
                                                         {
-                                                            AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-31";
+                                                        }
+                                                        if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-12";
+                                                        }
+                                                        if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "GBU-10";
+                                                        }
+                                                        if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 GPB";
+                                                        }
+                                                        if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk82 AIR";
+                                                        }
+                                                        if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            AvailableWeapons.text = AvailableWeapons.text + "Mk84 GPB";
                                                         }
 
                                                         // Select Suggested Weapon (falls through from most useful to least)
-                                                        if (pylon3 == 10 || pylon4 == 10 || pylon5 == 29 || pylon6 == 29 || pylon7 == 25 || pylon8 == 25) // CRV-7HE
+                                                        if (pylon1 == 8 || pylon2 == 8 || pylon3 == 18 || pylon4 == 18 || pylon5 == 14 || pylon6 == 14 || pylon5 == 15 || pylon6 == 15 || pylon7 == 14 || pylon8 == 14 || pylon7 == 15 || pylon8 == 15 || pylon9 == 11 || pylon10 == 11 || pylon11 == 9) // EGBU-12
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "CRV-7 HE\n";
-                                                            SuggestedWeapon.text = "CRV-7 HE";
+                                                            SuggestedWeapon.text = "EGBU-12";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 18 || pylon6 == 18 || pylon7 == 18 || pylon8 == 18 || pylon9 == 14 || pylon10 == 14) // GBU-54
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-54";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 17 || pylon6 == 17 || pylon7 == 17 || pylon8 == 17 || pylon9 == 13 || pylon10 == 13) // GBU-38
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-38";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon5 == 16 || pylon6 == 16 || pylon7 == 16 || pylon8 == 16 || pylon9 == 12 || pylon10 == 12) // GBU-31
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-31";
+                                                            SuggestedAttack.text = "GPS Guidance";
+                                                        }
+                                                        else if (pylon1 == 7 || pylon2 == 7 || pylon3 == 17 || pylon4 == 17 || pylon5 == 12 || pylon6 == 12 || pylon5 == 13 || pylon6 == 13 || pylon7 == 12 || pylon8 == 12 || pylon7 == 13 || pylon8 == 13 || pylon9 == 10 || pylon10 == 10 || pylon11 == 8) // GBU-12
+                                                        {
+                                                            SuggestedWeapon.text = "GBU-12";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 7 || pylon4 == 7 || pylon5 == 25 || pylon6 == 25 || pylon5 == 26 || pylon6 == 26 || pylon7 == 21 || pylon8 == 21 || pylon7 == 22 || pylon8 == 22) // APKWS
+                                                        else if (pylon5 == 11 || pylon6 == 11 || pylon7 == 11 || pylon8 == 11 || pylon9 == 9 || pylon10 == 9 || pylon11 == 7) // GBU-10
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "APKWS HE\n";
-                                                            SuggestedWeapon.text = "APKWS HE";
+                                                            SuggestedWeapon.text = "GBU-10";
                                                             SuggestedAttack.text = "Self Des Laser";
                                                         }
-                                                        else if (pylon3 == 1 || pylon4 == 1 || pylon3 == 6 || pylon4 == 6 || pylon5 == 19 || pylon6 == 19 || pylon5 == 24 || pylon6 == 24 || pylon7 == 19 || pylon8 == 19 || pylon7 == 20 || pylon8 == 20) // HYDRA
+                                                        else if (pylon1 == 3 || pylon2 == 3 || pylon3 == 13 || pylon4 == 13 || pylon5 == 3 || pylon6 == 3 || pylon5 == 4 || pylon6 == 4 || pylon7 == 3 || pylon8 == 3 || pylon7 == 4 || pylon8 == 4 || pylon9 == 2 || pylon10 == 2 || pylon11 == 2) // Mk82 GPB
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "HYDRA HE\n";
-                                                            SuggestedWeapon.text = "HYDRA HE";
-                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                            SuggestedWeapon.text = "Mk82 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
-                                                        else if (pylon3 == 8 || pylon4 == 8 || pylon5 == 27 || pylon6 == 27 || pylon7 == 23 || pylon8 == 23) // ZUNI
+                                                        else if (pylon1 == 2 || pylon2 == 2 || pylon3 == 12 || pylon4 == 12 || pylon5 == 1 || pylon6 == 1 || pylon5 == 2 || pylon6 == 2 || pylon7 == 1 || pylon8 == 1 || pylon7 == 2 || pylon8 == 2 || pylon9 == 1 || pylon10 == 1 || pylon11 == 1) // Mk82 AIR
                                                         {
-                                                            //AvailableWeapons.text = AvailableWeapons.text + "ZUNI HE";
-                                                            SuggestedWeapon.text = "ZUNI HE";
-                                                            SuggestedAttack.text = "CCIP on IR Point";
+                                                            SuggestedWeapon.text = "Mk82 AIR";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
+                                                        }
+                                                        else if (pylon5 == 5 || pylon6 == 5 || pylon7 == 5 || pylon8 == 5 || pylon9 == 3 || pylon10 == 3 || pylon11 == 3) // Mk84
+                                                        {
+                                                            SuggestedWeapon.text = "Mk84 GPB";
+                                                            SuggestedAttack.text = "CCIP On IR Point";
                                                         }
 
                                                         // If all fails - we have no available ordnance for the solution
