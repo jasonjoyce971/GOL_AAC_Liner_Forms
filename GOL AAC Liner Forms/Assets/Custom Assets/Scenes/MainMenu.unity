@@ -1183,6 +1183,7 @@ GameObject:
   - component: {fileID: 1298530216}
   - component: {fileID: 1298530215}
   - component: {fileID: 1298530218}
+  - component: {fileID: 1298530219}
   m_Layer: 0
   m_Name: Main Canvas
   m_TagString: Untagged
@@ -1291,6 +1292,27 @@ MonoBehaviour:
   CASAssistPanel: {fileID: 1592651198998500, guid: 3ca6181c6277ac847b3cda2e514b9d4b,
     type: 2}
   ExitPanel: {fileID: 1522950354267946, guid: 89a277f207336e845a33f27d59ba456d, type: 2}
+--- !u!114 &1298530219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298530213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1024, y: 800}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 1
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &1319719696
 GameObject:
   m_ObjectHideFlags: 0
