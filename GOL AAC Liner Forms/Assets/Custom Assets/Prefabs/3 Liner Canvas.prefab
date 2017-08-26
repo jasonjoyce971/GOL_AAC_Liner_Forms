@@ -1345,6 +1345,7 @@ GameObject:
   - component: {fileID: 114691232473854608}
   - component: {fileID: 114864362156750060}
   - component: {fileID: 114766440205594750}
+  - component: {fileID: 114068706586391468}
   m_Layer: 5
   m_Name: 3 Liner Canvas
   m_TagString: Untagged
@@ -1714,6 +1715,27 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: CONFIRM
+--- !u!114 &114068706586391468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868545950928336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1024, y: 800}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 1
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!114 &114071122299733412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4144,7 +4166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7378eeee81920e7449364a0bfd41a7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentPanel: {fileID: 0}
   Panel: {fileID: 1868545950928336}
   QuitPanel: {fileID: 1522950354267946, guid: 89a277f207336e845a33f27d59ba456d, type: 2}
   ReferencePanel: {fileID: 1414167847285022, guid: 8b6b52ab8ba6335439df20c5540ec10f,
